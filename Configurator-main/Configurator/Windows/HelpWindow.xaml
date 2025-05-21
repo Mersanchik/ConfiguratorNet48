@@ -1,0 +1,17 @@
+﻿<Window x:Class="Configurator.Windows.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Configurator.Windows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        Title="Справочное окно" Height="950" Width="950" MaxHeight="950" MaxWidth="950">
+    <Grid>
+        <StackPanel>
+            <Image x:Name="Foto1" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Source="/res/Service.png"/>
+            <Image x:Name="Foto2" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+               Source="/res/Service2.png"/>
+        </StackPanel>
+    </Grid>
+</Window>
