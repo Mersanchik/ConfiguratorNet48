@@ -484,11 +484,19 @@ namespace Configurator
 
         private void btConnect_Click(object sender, RoutedEventArgs e)//Подключиться
         {
-            InitializeSerialPort();
-            if (_serialPort.IsOpen)//Проверяем что порт подключен 
+            try
             {
-                BtConnectionParameters.IsEnabled = false;
+                InitializeSerialPort();
+                if (_serialPort.IsOpen)//Проверяем что порт подключен 
+                {
+                    BtConnectionParameters.IsEnabled = false;
+                }
+                else
+                {
+                    _serialPort.Close();
+                }
             }
+            catch { }
         }
 
         private void btDisConnect_Click(object sender, RoutedEventArgs e)//Отключиться
