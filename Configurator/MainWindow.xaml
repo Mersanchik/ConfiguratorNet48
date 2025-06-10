@@ -1,0 +1,345 @@
+﻿<Window x:Class="Configurator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Configurator"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="/res/settings.ico"
+        Title="Конфигуратор" Height="550" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Menu-->
+        <Grid Grid.Row="0">
+            <Menu FontSize="13" FontWeight="SemiBold">
+                <MenuItem Header="Помощь" x:Name="menuHelp" Click="menuHelp_Click" Margin="10 0 0 0"/>
+                <MenuItem Header="О программе" x:Name="menuAboutTheProgram" Click="menuAboutTheProgram_Click"/>
+            </Menu>
+        </Grid>
+        <!--Menu-->
+
+        <!---->
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Width="100" Height="20" Content="Подключиться" HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" Click="btConnect_Click" x:Name="btConnect"
+                    Margin="10 0 0 0">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <TextBlock>
+                            При нажатии происходит подключение либо к Коптеру,
+                            <LineBreak/>
+                            либо к Датчику
+                            </TextBlock>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+                <Button Width="100" Height="20" Content="Отключиться" HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" Click="btDisConnect_Click" x:Name="btDisConnect"
+                    Margin="10 0 0 0" IsEnabled="False">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <TextBlock>
+                            При нажатии происходит отключение
+                            </TextBlock>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+                <TextBlock x:Name="tbNameComPotr" Text="Выбранный COM порт:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="295"/>
+                <ColumnDefinition Width="265"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="45,0,45,5" 
+                        Visibility="Visible" Grid.ColumnSpan="2">
+
+                    <Button Content="Отправить конфигурацию"  IsEnabled="False"
+                            x:Name="btSendConfiguration" Click="btSendConfiguration_Click"
+                            HorizontalAlignment="Right" Width="205" Margin="0 0 0 0">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <TextBlock>
+                            Элемент, предназначен для передачи команд с переменными в консоль
+                            <LineBreak/>
+                            Доступен при нажатии на кнопк на плате, либо при запрете на закрытие терминала
+                                </TextBlock>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button Content="Считать конфигурацию с устройства" Margin="0 10 0 0" IsEnabled="False"
+                            x:Name="btReadConfiguration" Click="btReadConfiguration_Click"
+                        ToolTip="Считывание конфигурации с устройства"/>
+
+                    <Button Content="Сохранить конфигурацию" Click="btSaveConfiguration_Click" 
+                            x:Name="btSaveConfiguration" Margin="0 90 0 0"
+                        ToolTip="Сохранения параметров конфигурации в формате текстового файла"/>
+
+                    <Button Content="Загрузить конфигурацию" Margin="0 10 0 0"
+                            x:Name="btDownloadConiguration" Click="btDownloadConiguration_Click"
+                        ToolTip="Чтения текстового файла с параметрами конфигурации"/>
+
+                    <Button Content="Параметры подключения" Margin="0 10 0 0" Click="BtConnectionParameters_Click" 
+                            x:Name="BtConnectionParameters"
+                        ToolTip="Открытие окна настройки COM"/>
+                </StackPanel>
+
+                <!--cnf 1-->
+                <GroupBox Header="Переменные" x:Name="CNF" BorderBrush="Black" BorderThickness="1" Width="290" Height="210" 
+                        Margin="2,10,3,0" VerticalAlignment="Top" Visibility="Hidden" Grid.ColumnSpan="2">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                            <TextBlock Text="Роль устройства:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                       Width="100"/>
+
+                            <StackPanel Orientation="Vertical">
+                                <RadioButton Content="Коптер (значение 1)" x:Name="Copter" Checked="Copter_Checked"/>
+                                <RadioButton Content="Датчик (значение 2)" x:Name="Sensor" Checked="Sensor_Checked" Margin="0 5 0 0"/>
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 36 0 0">
+                            <TextBlock Text="Задержка ответа/запроса, мс:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="170"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbTout" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 55 0 0">
+                            <TextBlock Text="Кол-во неподтв. записей:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="170"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbAckRange" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 80 0 0">
+                            <TextBlock Text="Задержка закрытия терм.:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="170"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbTimeout" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 105 0 0">
+                            <TextBlock Text="Частота радиоканала, Гц:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                       Width="170"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbFreq" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 130 0 0">
+                            <TextBlock Text="Пороговый уровень несущей:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="170"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbHoldRssi" KeyDown="tbHoldRssi_KeyDown" TextChanged="tbHoldRssi_TextChanged"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 155 0 0">
+                            <TextBlock Text="Период измерения, сек:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="170"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbToutSec" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+                <!--cnf 1-->
+
+                <!--rtc N-->
+                <GroupBox Header="Переменные" x:Name="RTC" BorderBrush="Black" BorderThickness="1" Width="290" Height="210" 
+                        Margin="2,10,3,0" VerticalAlignment="Top" Visibility="Hidden" Grid.ColumnSpan="2">
+                    <Grid>
+                        <TextBlock x:Name="tbTextTitleRtc" Text="Установка времени RTC" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                       FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 25 0 0">
+                            <TextBlock Text="Секунды:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                            <TextBox Width="120" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="20 0 0 0" x:Name="tbRtcN" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+                <!--rtc N-->
+
+                <!--bbox N C-->
+                <GroupBox Header="Переменные" x:Name="BBOX" BorderBrush="Black" BorderThickness="1" Width="290" Height="210"
+                        Margin="2,10,3,0" VerticalAlignment="Top" Visibility="Hidden" Grid.ColumnSpan="2">
+                    <Grid>
+                        <TextBlock Text="Получение данных из ЧЯ" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                       FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 25 0 0" 
+                                    x:Name="spFirstPart">
+                            <TextBlock Text="Номер записи:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="118"/>
+                            <TextBox Width="120" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbBboxN" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center" TextChanged="tbHoldRssi_TextChanged"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 50 0 0">
+                            <TextBlock Text="Всего записей:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="118"/>
+                            <TextBox Width="120" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                             Margin="0 0 0 0" x:Name="tbBboxC" PreviewTextInput="tbTout_PreviewTextInput"
+                                     BorderBrush="Black" TextAlignment="Center"/>
+                        </StackPanel>
+
+                        <Button Width="110" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                        Margin="0 0 0 5" Content="Инициализировать журнал"
+                        x:Name="btInitializeTheLog" Click="btInitializeTheLog_Click"/>
+
+                        <Button Width="110" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                        Margin="0 0 0 5" Content="Сброс журнала"
+                        x:Name="ResettingTheLog" Click="ResettingTheLog_Click"/>
+
+
+                        <TextBlock Text="Чем больше число для прочтения задаётся, тем больше времени уходит на прочтение данных и записи их в файл." 
+                                   Margin="10 0 0 40" x:Name="tbMesBbox"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="250" TextWrapping="Wrap"/>
+                    </Grid>
+                </GroupBox>
+                <!--bbox N C-->
+
+                <!--adc-->
+                <GroupBox Header="Переменные" x:Name="ADC" BorderBrush="Black" BorderThickness="1" Width="290" Height="210" 
+                        Margin="2,10,3,0" VerticalAlignment="Top" Visibility="Hidden" Grid.ColumnSpan="2">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                            <TextBlock Text="ADC:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                       Width="50"/>
+
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                     Margin="0 0 0 0" x:Name="tbADC" BorderBrush="Black" TextAlignment="Center"
+                                     IsReadOnly="True"/>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 25 0 0">
+                            <TextBlock Text="AKB:" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="50"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                     Margin="0 0 0 0" x:Name="tbAKB" BorderBrush="Black" TextAlignment="Center"
+                                      IsReadOnly="True"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 45 0 0">
+                            <TextBlock Text="VE:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="50"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                     Margin="0 0 0 0" x:Name="tbVE" BorderBrush="Black" TextAlignment="Center"
+                                      IsReadOnly="True"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 70 0 0">
+                            <TextBlock Text="ES:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="50"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                     Margin="0 0 0 0" x:Name="tbES" BorderBrush="Black" TextAlignment="Center"
+                                      IsReadOnly="True"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 95 0 0">
+                            <TextBlock Text="BH:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                       Width="50"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                     Margin="0 0 0 0" x:Name="tbBH" BorderBrush="Black" TextAlignment="Center"
+                                      IsReadOnly="True"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 120 0 0">
+                            <TextBlock Text="RF_rssi:" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                       Width="50"/>
+                            <TextBox Width="90" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                     Margin="0 0 0 0" x:Name="tbRFRssi" BorderBrush="Black" TextAlignment="Center"
+                                      IsReadOnly="True"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+                <!--adc-->
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <TextBlock Text="Информация:" FontWeight="Black"/>
+                <Border BorderBrush="Black" BorderThickness="1" Width="260" Height="280" HorizontalAlignment="Center"
+                        VerticalAlignment="Top" Margin="0 20 0 0">
+                    <TextBox x:Name="tbMessage" TextWrapping="Wrap" IsReadOnly="True">
+                        <TextBox.ToolTip>
+                            <ToolTip>
+                                <TextBlock>
+                                    Элемент, обеспечивающий отображение сообщений для пользователя 
+                                    <LineBreak/>
+                                    о выявленных неполадках при взаимодействии
+                                    <LineBreak/>
+                                    а также информация по работе с платой
+                                </TextBlock>
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                    </TextBox>
+                </Border>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="0 0 0 60">
+                    <TextBlock Text="Ввод в консоль:" HorizontalAlignment="Left" FontWeight="Black"/>
+                    <TextBox BorderBrush="Black" Width="264" x:Name="tbTextForConsole"
+                             ToolTip="Элемент, предназначен для ввода пользователем команд в консоль"/>
+
+
+                    <TextBlock Text="Команды для терминала:" HorizontalAlignment="Left" FontWeight="Black"
+                               Margin="0 15 0 0" />
+                    <ComboBox x:Name="cbCommandsTerminal" Width="264" Margin="0 0 0 0"
+                              ToolTip="Элемент, предназначен для передачи пользователем уже заготовленных команд в консоль">
+                        <ComboBoxItem Content="Закрыть терминал (exit)"/>
+                        <ComboBoxItem Content="Запрет закрытия терминала (exit 0)"/>
+                        <ComboBoxItem Content="Считать конфигурацию (cnf)"/>
+                        <ComboBoxItem Content="Редактировать конфигурацию (cnf 1)"/>
+                        <ComboBoxItem Content="Считать время (rtc)"/>
+                        <ComboBoxItem Content="Установить время (rtc 1)"/>
+                        <ComboBoxItem Content="Приведение результатов (adc)"/>
+                        <ComboBoxItem Content="Информация о ЧЯ (bbox)"/>
+                        <ComboBoxItem Content="Данные из ЧЯ (bbox N C)"/>
+                    </ComboBox>
+
+                    <Button Width="110" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                        Margin="0 5 5 0" Content="Отправить" IsEnabled="False"
+                        x:Name="btSendToConsole" Click="btSendToConsole_Click"
+                            ToolTip="Элемент, предназначен для передачи команд из поля 'Ввод в консоль' в консоль"/>
+                </StackPanel>
+
+
+                <Button Width="110" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                        Margin="0 0 5 5" Content="Очистить консоль"
+                        x:Name="btClearTheConsole" Click="btClearTheConsole_Click"/>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <TextBox Background="LightGray" x:Name="tbConsole" FontSize="12" IsReadOnly="True"
+                         TextChanged="tbConsole_TextChanged" VerticalScrollBarVisibility="Auto"
+                         Margin="5 20 5 5"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

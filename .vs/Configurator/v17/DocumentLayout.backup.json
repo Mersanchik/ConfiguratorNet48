@@ -1,0 +1,123 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|c:\\users\\\u0432\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\desktop\\configurator\\configurator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|solutionrelative:configurator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\configurator\\windows\\comsettingswindows.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|solutionrelative:configurator\\windows\\comsettingswindows.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\configurator\\windows\\abouttheprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|solutionrelative:configurator\\windows\\abouttheprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\configurator\\windows\\helpwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|solutionrelative:configurator\\windows\\helpwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\configurator\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|solutionrelative:configurator\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\configurator\\windows\\comsettingswindows.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{C55A6B11-07C7-4970-92B3-ABD433CEA4B4}|Configurator\\Configurator.csproj|solutionrelative:configurator\\windows\\comsettingswindows.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Configurator\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\MainWindow.xaml",
+              "RelativeToolTip": "Configurator\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-10T03:04:05.022Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Configurator\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Configurator\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T03:04:08.532Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "COMSettingsWindows.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\COMSettingsWindows.xaml",
+              "RelativeDocumentMoniker": "Configurator\\Windows\\COMSettingsWindows.xaml",
+              "ToolTip": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\COMSettingsWindows.xaml",
+              "RelativeToolTip": "Configurator\\Windows\\COMSettingsWindows.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-10T03:04:11.715Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "COMSettingsWindows.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\COMSettingsWindows.xaml.cs",
+              "RelativeDocumentMoniker": "Configurator\\Windows\\COMSettingsWindows.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\COMSettingsWindows.xaml.cs",
+              "RelativeToolTip": "Configurator\\Windows\\COMSettingsWindows.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAACKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T03:04:13.118Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HelpWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\HelpWindow.xaml",
+              "RelativeDocumentMoniker": "Configurator\\Windows\\HelpWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\HelpWindow.xaml",
+              "RelativeToolTip": "Configurator\\Windows\\HelpWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-10T03:04:16.217Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutTheProgram.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\AboutTheProgram.xaml",
+              "RelativeDocumentMoniker": "Configurator\\Windows\\AboutTheProgram.xaml",
+              "ToolTip": "C:\\Users\\\u0412\u0438\u043A\u0442\u043E\u0440\u0438\u044F\\Desktop\\Configurator\\Configurator\\Windows\\AboutTheProgram.xaml",
+              "RelativeToolTip": "Configurator\\Windows\\AboutTheProgram.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-10T04:22:12.586Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
