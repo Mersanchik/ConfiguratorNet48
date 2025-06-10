@@ -304,13 +304,13 @@
 
                 <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="0 0 0 60">
                     <TextBlock Text="Ввод в консоль:" HorizontalAlignment="Left" FontWeight="Black"/>
-                    <TextBox BorderBrush="Black" Width="264" x:Name="tbTextForConsole"
+                    <TextBox BorderBrush="Black" Width="260" x:Name="tbTextForConsole"
                              ToolTip="Элемент, предназначен для ввода пользователем команд в консоль"/>
 
 
                     <TextBlock Text="Команды для терминала:" HorizontalAlignment="Left" FontWeight="Black"
                                Margin="0 15 0 0" />
-                    <ComboBox x:Name="cbCommandsTerminal" Width="264" Margin="0 0 0 0"
+                    <ComboBox x:Name="cbCommandsTerminal" Width="260" Margin="0 0 0 0"
                               ToolTip="Элемент, предназначен для передачи пользователем уже заготовленных команд в консоль">
                         <ComboBoxItem Content="Закрыть терминал (exit)"/>
                         <ComboBoxItem Content="Запрет закрытия терминала (exit 0)"/>

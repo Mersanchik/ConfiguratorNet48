@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Виктория\Desktop\Configurator\Configurator\obj\Debug\
+C:\Users\Виктория\source\repos\ConfiguratorNet48\Configurator\obj\Debug\
 Configurator
 none
 false
 DEBUG;TRACE
-C:\Users\Виктория\Desktop\Configurator\Configurator\App.xaml
+C:\Users\Виктория\source\repos\ConfiguratorNet48\Configurator\App.xaml
 41862197472
 
-82027884202
+9-345304973
 121182277259
 MainWindow.xaml;Windows\AboutTheProgram.xaml;Windows\COMSettingsWindows.xaml;Windows\HelpWindow.xaml;
 
-False
+True
 
